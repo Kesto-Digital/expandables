@@ -270,6 +270,11 @@ p {
   align-items: center;
 }
 
+.stake-bamboo-symbol {
+  width: 2vh !important;
+  height: 2vh !important;
+}
+
 .cloud {
   position: absolute;
   left: 0%;
@@ -821,6 +826,10 @@ p {
   background-color: #303030;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .panda_reel {
   display: -webkit-box;
   display: -webkit-flex;
@@ -888,6 +897,11 @@ p {
   justify-content: space-around;
 }
 
+.panda-id, .bamboo-earned {
+  color: black;
+  margin-bottom: 0px;
+}
+
 .stake-btn:hover {
   opacity: 0.95;
   -webkit-transform: translate(0px, -2px);
@@ -904,24 +918,25 @@ p {
   background-repeat: repeat, no-repeat;
 }
 
+#claim-section, #holder-claim-section {
+  position: relative;
+  text-align: center;
+  width: 45%;
+  padding: 1em;
+  background-color: #fff;
+  color:black;
+  position: relative;
+  align-self: stretch;
+  margin: auto;
+  min-height: 20vh;
+}
+
 .your-nft-div {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 30vh;
+  text-align: center;
+  min-height: 18vh;
   min-width: 100%;
-  padding: 2em;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding: 1em;
   background-color: #fff;
 }
 
@@ -935,10 +950,15 @@ p {
   color: #303030;
 }
 
+#unstake-title {
+  margin-top: 7vh;
+
+}
+
 .staked-nft-div {
+  text-align: center;
   position: relative;
   min-width: 100%;
-  margin-top: 7vh;
   padding: 1em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -953,31 +973,60 @@ p {
   color: #303030;
 }
 
-.nft-wrap {
+#available-panda-images, #staked-panda-images {
+  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.panda-id {
-  margin-bottom: 5px;
-  font-size: 1.5vh;
-  line-height: 1.25em;
+.staker-panda {
+  width: 13%;
+  font-size: 1.3vw;
+  margin: 10px;
+  transition: transform ease 300ms;
 }
 
-.panda-pic {
-  width: 125px;
-  height: 117px;
+.staker-panda:hover {
+  transform: translate(0, -5px);
+}
+
+
+.staker-panda:hover .panda-id, .staker-panda:hover .bamboo-earned {
+  color: #576954 !important;
+}
+
+.staker-panda img {
+  border: 5px solid black;
+}
+
+.staker-panda:hover img {
+  border-color: #576954;
+  cursor: pointer;
+}
+
+.active img, .active p{
+  border-color: #576954;
+  color: #576954!important;
+  /* border-width: 40px;
+  border-image: url(../images/Bamboo5.png) 35% round; */
 }
 
 .stake-btn {
@@ -1007,7 +1056,6 @@ p {
 }
 
 .stake-btn.stake-all {
-  margin-top: 1.5em;
   font-size: 2vh;
 }
 
@@ -1033,7 +1081,7 @@ p {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(48, 48, 48, 0.48);
+  background-color: rgba(48, 48, 48, 0.95);
 }
 
 .claim-wrapper {
@@ -1073,7 +1121,163 @@ p {
   margin-top: 1em;
 }
 
+.selected {
+  color: black;
+}
+
+#pending-transactions {
+  text-align: center;
+  min-width: 20%;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 99999999;
+}
+
+.loading-div {
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  height: 5%;
+  background-color: white;
+  border: solid black .3em;
+  color: black;
+  font-size: 1vw;
+  line-height: 1vw;
+  padding: 20px;
+  text-align: center;
+}
+
+.etherscan-link {
+  text-decoration: none;
+}
+
+#error-popup, #status-popup {
+  background-color: white;
+  z-index: 99999;
+  position:fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 53vw;
+  height: 35vh;
+  border: solid .3em black;
+  border-radius: .2em;
+  text-align: center;
+  box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
+}
+
+#error-popup p, #status-popup p {
+  width: 100%;
+  font-size: 2vw;
+  line-height: 2vw;
+  position: absolute;
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blinker 1.6s linear infinite;
+}
+
+.success {
+  background-color: rgb(49, 219, 49) !important;
+}
+
+.failure {
+  background-color: #F72119 !important;
+}
+
+#block-screen, #block-screen-error, #block-screen-status, #block-screen-approval {
+  z-index: 9998;
+  width: 100vw;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+#approval-section {
+  padding: 1.6em 1.6em 1.6em 1.6em;
+  width: 40vw;
+  border-radius: 20px;
+  background-color: #303030;
+  text-align: center;
+
+  z-index: 99999;
+  position:fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 5px white;
+  font-size: 2.7vw;
+  text-align: center;
+  box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
+}
+
+#claim-sections {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 991px) {
+
+  #claim-sections {
+    display: initial;
+  }
+
+  .center-on-mobile {
+    text-align: center;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  #claim-section, #holder-claim-section {
+    width: 100%;
+  }
+
+  #approval-section {
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+  }
+
+  #pending-transactions {
+    min-width: 85%;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .loading-div {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+
+  #error-popup, #status-popup {
+    width: 75vw;
+    height: 15vh;
+  }
+
+  #error-popup p, #status-popup p {
+    font-size: 4vw;
+    line-height: 4vw;
+  }
+
+  .staker-panda {
+    width: 41%;
+  }
+
   .navigation_link {
     font-size: 18px;
   }
@@ -1314,6 +1518,7 @@ p {
   .staking-section {
     padding-right: 5vh;
     padding-left: 5vh;
+    padding-top: 4vh;
   }
 
   .nft-showcase-grid {
@@ -1330,7 +1535,7 @@ p {
   }
 
   .stake-btn.stake-all {
-    font-size: 1.5vh;
+    font-size: 1.9vh;
   }
 }
 
@@ -1424,9 +1629,6 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
-  .staked-nft-div {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 479px) {
@@ -1621,9 +1823,6 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .stake-btn.stake-all {
-    font-size: 1.2vh;
-  }
 }
 
 @font-face {
