@@ -14,6 +14,8 @@ const bambooAbi = ()=>{
 
 const etherscanBase = `https://etherscan.io/tx/`;
 
+const baseImageURI = "https://ipfs.io/ipfs/QmSLsBWSEZrARakXbQd3XLFaxEJoZzksXPYcCSaVXJcHQ7/";
+
 const correctChain = 1;
 
 /*********************************************************************************/
@@ -31,6 +33,8 @@ const correctChain = 1;
 // };
 
 // const etherscanBase = `https://rinkeby.etherscan.io/tx/`;
+
+// const baseImageURI = 'https://ipfs.io/ipfs/QmfP6VGcW147NaijnWV3KeJyM6LnxQCaCaVMhXHgPmuGrf/'
 
 // const correctChain = 4;
 
@@ -208,7 +212,6 @@ const unstakeByIds = async()=>{
 var currentlyStaked = [];
 
 const getPandaImages = async()=>{
-    const _baseImageURI = "https://ipfs.io/ipfs/QmSLsBWSEZrARakXbQd3XLFaxEJoZzksXPYcCSaVXJcHQ7/";
     $("#available-panda-images").empty();
     $("#staked-panda-images").empty();
 
@@ -223,7 +226,7 @@ const getPandaImages = async()=>{
             if (selectedForStaking.has(Number(_pandaId))) {
                 active = "active";
             }
-            let _fakeJSX = `<div id="panda-${_pandaId}" class="staker-panda ${active}"><img onclick="selectForStaking(${_pandaId})" src="${_baseImageURI}${_pandaId}.png"><p class="panda-id">#${_pandaId}</p></div>`
+            let _fakeJSX = `<div id="panda-${_pandaId}" class="staker-panda ${active}"><img onclick="selectForStaking(${_pandaId})" src="${baseImageURI}${_pandaId}.png"><p class="panda-id">#${_pandaId}</p></div>`
 
             $("#available-panda-images").append(_fakeJSX);
         };
@@ -243,7 +246,7 @@ const getPandaImages = async()=>{
                 active = "active";
             }
             let bambooEarned = formatEther(await bamboo.calculateStakingRewards(_pandaId));
-            let _fakeJSX = `<div id="panda-${_pandaId}" class="staker-panda ${active}"><img onclick="selectForUnstaking(${_pandaId})" src="${_baseImageURI}${_pandaId}.png"><p class="panda-id">#${_pandaId}</p><p class="bamboo-earned"><span id="bamboo-earned-${_pandaId}">${bambooEarned}</span><img class="stake-bamboo-symbol" style="border:none;margin-left:2px;cursor:default;" src='./images/Bamboo5.png' width=16 height=16></p></div>`
+            let _fakeJSX = `<div id="panda-${_pandaId}" class="staker-panda ${active}"><img onclick="selectForUnstaking(${_pandaId})" src="${baseImageURI}${_pandaId}.png"><p class="panda-id">#${_pandaId}</p><p class="bamboo-earned"><span id="bamboo-earned-${_pandaId}">${bambooEarned}</span><img class="stake-bamboo-symbol" style="border:none;margin-left:2px;cursor:default;" src='./images/Bamboo5.png' width=16 height=16></p></div>`
             
             $("#staked-panda-images").append(_fakeJSX);
         };

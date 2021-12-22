@@ -1010,7 +1010,7 @@ p {
 
 
 .staker-panda:hover .panda-id, .staker-panda:hover .bamboo-earned {
-  color: #576954 !important;
+  color: #629658 !important;
 }
 
 .staker-panda img {
@@ -1018,15 +1018,13 @@ p {
 }
 
 .staker-panda:hover img {
-  border-color: #576954;
+  border-color: #629658;
   cursor: pointer;
 }
 
 .active img, .active p{
-  border-color: #576954;
-  color: #576954!important;
-  /* border-width: 40px;
-  border-image: url(../images/Bamboo5.png) 35% round; */
+  border-color: #629658;
+  color: #629658 !important;
 }
 
 .stake-btn {
