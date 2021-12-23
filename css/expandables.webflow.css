@@ -1225,7 +1225,49 @@ p {
   flex-direction: row;
 }
 
+#mobile-navbar {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
+
+  #desktop-navbar {
+    display: none;
+  }
+  
+  #mobile-navbar {
+    display: block;
+    background-color: #303030;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 10px;
+  }
+
+  .social_link_div {
+    padding: 0;
+    margin: auto;
+    width: 50%;
+  }
+
+  #mobile-navbar img {
+    padding-top: 5px;
+  }
+
+  #mobile-navbar a {
+    text-align: center;
+  }
+
+  #expandables-logo-mobile {
+    width: 75%;
+    margin: auto;
+    padding: 15px;
+  }
+
+  .social_link {
+    width: 33%;
+    padding: 0;
+    margin: 0px;
+  }
 
   #claim-sections {
     display: initial;
@@ -1277,7 +1319,10 @@ p {
   }
 
   .navigation_link {
+    padding: 5px;
     font-size: 18px;
+    width: 20%;
+    text-align: center;
   }
 
   .navigation_link:hover {
@@ -1538,13 +1583,6 @@ p {
 }
 
 @media screen and (max-width: 767px) {
-  .navigation_link {
-    display: none;
-  }
-
-  .social_link {
-    padding-left: 20px;
-  }
 
   .heading {
     width: 100%;
