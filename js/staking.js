@@ -41,7 +41,7 @@ const correctChain = 1;
 /*********************************END CONFIG************************************/
 
 if (window.ethereum == undefined) {
-    displayErrorMessage('Use a web3 enabled browser with MetaMask or the MetaMask mobile app to access staking.', false);
+    displayErrorMessage('Use a web3 enabled browser with MetaMask or the MetaMask mobile app to stake Pandas!');
 }
 
 const provider = new ethers.providers.Web3Provider(window.ethereum,"any");
