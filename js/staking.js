@@ -436,6 +436,21 @@ const checkConnectedStatus = async() => {
     }
 }
 
+const importBambooToWallet = async() => {
+    ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: '0xA75F96760B715A5958a62FDe3D739eB8b2A50A7C',
+            symbol: 'BAMBOO',
+            decimals: 18,
+            image: 'https://raw.githubusercontent.com/saintmaxi/expandables/master/images/Bamboo5.png',
+          },
+        },
+      });
+}
+
 setInterval(async()=>{
     await checkConnectedStatus();
     await updateApprovedStatus();
@@ -453,6 +468,7 @@ ethereum.on("accountsChanged", async(accounts_)=>{
 });
 
 window.onload = async()=>{
+    await fixHeight();
     await checkConnectedStatus();
     await updateApprovedStatus();
 

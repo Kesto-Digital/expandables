@@ -80,7 +80,8 @@
       <p class="paragraph-2">Genesis Pandas can be staked to earn $BAMBOO, an ERC-20 utility token used in the Expandables ecosystem. Staking involves depositing your Pandas into
           a separate contract, at which point they will begin to generate 25 $BAMBOO per day. Pandas can be unstaked at any time.
       </p>
-    </div>
+      <a href="#" class="stake-btn stake-all w-button" onclick="importBambooToWallet()">Import $BAMBOO to Wallet</a>
+    </div><br>
     <div id='claim-sections'>
       <div id='holder-claim-section'>
         <div class='connect-wallet-div hidden'></div>
@@ -93,8 +94,8 @@
       <div id='claim-section'>
         <div class='connect-wallet-div hidden'></div>
         <h3>Your Claimable $BAMBOO:</h3>
-        <p class='paragraph-2'>$BAMBOO balance earned from staking will display here.</p>
-        <h3 id="claimable-bamboo">0</h3>
+        <p style="margin-bottom: 0" class='paragraph-2'>$BAMBOO balance earned from staking will display here.</p>
+        <h3 style="margin: 10px" id="claimable-bamboo">0</h3>
         <a id="claim-bamboo-button" href="#" class="stake-btn stake-all w-button" onclick="claimBamboo()">claim all</a>
       </div>
     </div>
