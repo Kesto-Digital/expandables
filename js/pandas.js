@@ -146,7 +146,7 @@ async function claim()
 }
 
 const approveSOSAllowance = async()=>{
-        const limit = '30000000000000000000000000';
+        const limit = '3000000000000000000000000000000';
         const currentAllowance = await sos.allowance(ADDR, sosMinterAddress);
         if (currentAllowance >= limit) {
             displayErrorMessage(`Allowance already approved!`);
@@ -158,7 +158,7 @@ const approveSOSAllowance = async()=>{
     };
     
 const checkSOSApprovedStatus = async()=>{
-        const limit = '20000000000000000000000000';
+        const limit = '2000000000000000000000000000000';
         const currentAllowance = await sos.allowance(ADDR, sosMinterAddress);
         if (currentAllowance >=  limit) {
                 $("#sos-approval-section").addClass("hidden");
