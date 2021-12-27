@@ -1202,7 +1202,7 @@ p {
   top: 0;
 }
 
-#approval-section {
+#approval-section, #sos-approval-section {
   padding: 1.6em 1.6em 1.6em 1.6em;
   width: 40vw;
   border-radius: 20px;
@@ -1220,6 +1220,20 @@ p {
   box-shadow: 0 0 5000px 5000px rgba(0,0,0,0.88);
 }
 
+#close {
+  position: absolute;
+  padding: 1.5vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--main-border-color);
+  text-align: right;
+  cursor: pointer;
+  font-size: 3vw;
+  color: red;
+  z-index: 9996;
+}
+
 #claim-sections {
   display: flex;
   flex-direction: row;
@@ -1227,6 +1241,58 @@ p {
 
 #mobile-navbar {
   display: none;
+}
+
+.one {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.0s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.0s;
+}
+
+.two {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.2s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.2s;
+}
+
+.three {
+  opacity: 0;
+  -webkit-animation: dot 1.3s infinite;
+  -webkit-animation-delay: 0.3s;
+  animation: dot 1.3s infinite;
+  animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dot {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes dot {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+#mint-costs {
+  text-align: center;
 }
 
 @media screen and (max-width: 991px) {
@@ -1285,10 +1351,14 @@ p {
     width: 100%;
   }
 
-  #approval-section {
+  #approval-section, #sos-approval-section {
     width: 90vw;
     margin: auto;
     text-align: center;
+  }
+
+  #close {
+    font-size: 5vw;
   }
 
   #pending-transactions {
