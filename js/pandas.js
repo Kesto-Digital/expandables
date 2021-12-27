@@ -232,11 +232,15 @@ async function mpInit()
                 );                
 
         updateClaim( 5 );
-        $("#sos-cost").html(Number(ethers.utils.formatEther(await sosMinter.mintPrice())).toFixed(0));
+        $("#sos-cost").html(numberWithCommas(Number(ethers.utils.formatEther(await sosMinter.mintPrice())).toFixed(0)));
 }
 async function mpMain()
 {
         await mpInit();
+}
+
+function numberWithCommas(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 // MAIN
