@@ -215,19 +215,12 @@ async function mpInit()
                 purchaseBtn.innerHTML = "MINT WITH ETH";
                 $("#sos-purchase-btn").removeClass("hidden");
                 $("#mint-costs").removeClass("hidden");
-        }
-
-        document.querySelector( "#mp-there-are-12" ).innerHTML =
-                printf(
-                        'HOW MANY WOULD YOU LIKE TO MINT?',
-                        [ NUMFREE ]
-                );                
-
+        }  
 
 
         document.querySelector( "#nrMinted" ).innerHTML =
                 printf(
-                        '%s/3333 MINTED',
+                        '%s/3500 MINTED',
                         [ nrMinted ]
                 );                
 
