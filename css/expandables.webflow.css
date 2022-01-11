@@ -1297,6 +1297,11 @@ p {
 
 @media screen and (max-width: 991px) {
 
+  #heading-message  {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
   #desktop-navbar {
     display: none;
   }
