@@ -14,7 +14,7 @@ const bambooAbi = ()=>{
 
 const etherscanBase = `https://etherscan.io/tx/`;
 
-const baseImageURI = "https://ipfs.io/ipfs/QmSLsBWSEZrARakXbQd3XLFaxEJoZzksXPYcCSaVXJcHQ7/";
+const baseImageURI = "https://ipfs.io/ipfs/QmVvERCaTZe6kYyp6wb1eLxWReQJ8Du15gJXhst18S1bmo/";
 
 const correctChain = 1;
 
