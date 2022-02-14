@@ -26,7 +26,7 @@ class StatsController {
   }
 
   async getGenesis(req, res) {
-    let roleId = this.roleConfiguration.find(r => r.name === "Genesis Mice").id;
+    let roleId = this.roleConfiguration.find(r => r.name === "Pandas").id;
     const result = await User.count({
       status: { $elemMatch: { roleId: roleId, qualified: true } },
     });

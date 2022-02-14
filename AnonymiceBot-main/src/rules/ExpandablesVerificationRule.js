@@ -4,9 +4,7 @@ const { Contract } = require("ethers");
 const discordBot = require("../discordBot");
 
 /**
- * Anonymice specific Verification Rule - checks whether users should be assigned Genesis Mice, Baby Mice and
- * Alpha Mice roles based on their holdings. Checks for Mice held in the Users wallet, staked for CHEETH
- * or incubating babies in the breeding process.
+ * pandas and staked pandas
  */
 class ExpandablesVerificationRule {
   constructor(config) {
@@ -27,7 +25,7 @@ class ExpandablesVerificationRule {
 
     let qualifiesForPandasRole = false;
 
-    //execute - genesis mice
+    //execute - Pandas
     try {
       let pandasRoleConfig = this.config.roles.find(
           (r) => r.name === "Pandas"
@@ -44,7 +42,7 @@ class ExpandablesVerificationRule {
           qualifiesForPandasRole
       );
       executionResults.push({
-        role: "Genesis Mice",
+        role: "Pandas",
         roleId: pandasRole.id,
         qualified: qualifiesForPandasRole,
         result: {
