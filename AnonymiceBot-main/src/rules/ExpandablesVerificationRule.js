@@ -99,7 +99,7 @@ class ExpandablesVerificationRule {
   }
 
   async getPandas(config, user, provider) {
-    let logMessage = `Anonymice Verification Rule is executing - Get Pandas:
+    let logMessage = `Expandables Verification Rule is executing - Get Pandas:
 Contract:       ${config.Address}
 Argument(s):    ${user.walletAddress}`;
 
@@ -122,7 +122,7 @@ Result:       ${result}`;
   }
 
   async getStakedPandas(config, user, provider) {
-    let logMessage = `Anonymice Verification Rule is executing - Get Staked Pandas:
+    let logMessage = `Expandables Verification Rule is executing - Get Staked Pandas:
 Contract:       ${config.Address}
 Argument(s):    ${user.walletAddress}`;
 
